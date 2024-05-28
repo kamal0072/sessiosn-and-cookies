@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Session</title>
+</head>
+<body>
+    <h1>All Session will Goes Here</h1>
+    <h2>First Name : {{fn}}</h2>
+    <h2>Last Name : {{ln}}</h2>
+    <h2>Address : {{add}}</h2>
+    <h3>{{request.session.keys}}</h3>
+    <h3>{{request.session.items}}</h3>
+    {% if request.session.items %}
+        {% for k, v in request.session.items  %}
+                <h1>{{k}} : {{v}}</h1>
+        {% endfor %}
+    {% else %}
+        <h2>Session Are not Here</h2>
+    {% endif %}
+</body>
+</html>
